@@ -2,4 +2,4 @@
 
 ## Branches
 
-- `main`: Counter example used to learn the basics of Alpine
+- `counter`: Counter example used to learn the basics of Alpine
