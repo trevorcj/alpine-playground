@@ -6,6 +6,7 @@ document.addEventListener("alpine:init", () => {
     belt: "",
     bio: "",
     newsletter: true,
+    showPassword: false,
 
     submitForm() {
       console.log({

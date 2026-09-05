@@ -19,14 +19,14 @@
     <form x-data="signupForm" @submit.prevent="submitForm()">
       <h1>Ninja Signup Form</h1>
 
-      <button type="button" @click.shift="alert('Hello')">click</button>
+      <!-- <button type="button" @click.shift="alert('Hello')">click</button>
       <button type="button" @mouseleave="console.log('mouseleave')">
         mouseleave
       </button>
       <button type="button" @dblclick="console.log('dblclick')">
         dblclick
       </button>
-      <input type="text" @keyup="console.log('keyup')" />
+      <input type="text" @keyup="console.log('keyup')" /> -->
 
       <!-- username -->
       <div class="form-field">
@@ -45,9 +45,14 @@
       <div class="form-field password">
         <label>
           <span>Password:</span>
-          <input type="password" x-model="password" />
+          <input
+            :type="showPassword ? 'text' : 'password'"
+            x-model="password" />
         </label>
-        <div x-text="password"></div>
+
+        <button type="button" @click="showPassword = !showPassword">
+          <span x-text="showPassword ? 'Hide' : 'Show'"></span>
+        </button>
       </div>
 
       <!-- confirm password -->
