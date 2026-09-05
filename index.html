@@ -16,7 +16,7 @@
     <script src="index.js"></script>
   </head>
   <body>
-    <form x-data="signupForm" @submit.prevent="submitForm()">
+    <form x-data="signupForm" @submit.prevent="submitForm($event)">
       <h1>Ninja Signup Form</h1>
 
       <!-- <button type="button" @click.shift="alert('Hello')">click</button>
@@ -38,7 +38,6 @@
           <span></span>Username:
           <input type="text" maxlength="15" x-model="username" />
         </label>
-        <div x-text="username"></div>
       </div>
 
       <!-- password -->
@@ -61,7 +60,6 @@
           <span>Confirm Password:</span>
           <input type="password" x-model="passwordConfirm" />
         </label>
-        <div x-text="passwordConfirm"></div>
       </div>
 
       <!-- belt color -->
@@ -77,7 +75,6 @@
             <option value="brown">Brown</option>
           </select>
         </label>
-        <div x-text="belt"></div>
       </div>
 
       <!-- short bio -->
@@ -89,7 +86,6 @@
           <span>Short Bio:</span>
           <textarea maxlength="100" x-model="bio"></textarea>
         </label>
-        <div x-text="bio"></div>
       </div>
 
       <!-- newsletter signup -->
@@ -98,7 +94,6 @@
           <input type="checkbox" x-model="newsletter" />
           <span>Sign up for the newsletter</span>
         </label>
-        <div x-text="newsletter"></div>
       </div>
 
       <!-- submit button -->
