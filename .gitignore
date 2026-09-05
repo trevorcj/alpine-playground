@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+node_modules/
+dist/
