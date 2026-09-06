@@ -25,15 +25,6 @@
     <form x-data="signupForm" @submit.prevent="submitForm($event)">
       <h1>Ninja Signup Form</h1>
 
-      <!-- <button type="button" @click.shift="alert('Hello')">click</button>
-      <button type="button" @mouseleave="console.log('mouseleave')">
-        mouseleave
-      </button>
-      <button type="button" @dblclick="console.log('dblclick')">
-        dblclick
-      </button>
-      <input type="text" @keyup="console.log('keyup')" /> -->
-
       <!-- username -->
       <div class="form-field">
         <p class="hint" x-bind:class="{'warning': username.length > 10}">
@@ -122,6 +113,14 @@
 
       <!-- submit button -->
       <button type="submit">Submit</button>
+
+      <!-- Modal -->
+      <div class="overlay" x-show="success" x-cloak>
+        <div class="modal">
+          <h2>Thank You!</h2>
+          <button type="button" @click="success = false">Close</button>
+        </div>
+      </div>
     </form>
   </body>
 </html>
