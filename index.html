@@ -10,6 +10,12 @@
 
     <link rel="stylesheet" href="style.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet" />
+
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -38,6 +44,9 @@
           <span></span>Username:
           <input type="text" maxlength="15" x-model="username" />
         </label>
+        <template x-if="errors.username">
+          <p x-text="errors.username" class="error"></p>
+        </template>
       </div>
 
       <!-- password -->
@@ -52,6 +61,10 @@
         <button type="button" @click="showPassword = !showPassword">
           <span x-text="showPassword ? 'Hide' : 'Show'"></span>
         </button>
+
+        <template x-if="errors.password">
+          <p x-text="errors.password" class="error"></p>
+        </template>
       </div>
 
       <!-- confirm password -->
@@ -60,6 +73,10 @@
           <span>Confirm Password:</span>
           <input type="password" x-model="passwordConfirm" />
         </label>
+
+        <template x-if="errors.passwordConfirm">
+          <p x-text="errors.passwordConfirm" class="error"></p>
+        </template>
       </div>
 
       <!-- belt color -->
@@ -68,13 +85,16 @@
           >Belt Color:
           <select x-model="belt">
             <option value="">Select a belt</option>
-            <option value="black">Black</option>
-            <option value="white">White</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="brown">Brown</option>
+
+            <template x-for="(color, index) in beltColors" :key="color">
+              <option :value="color" x-text="color"></option>
+            </template>
           </select>
         </label>
+
+        <template x-if="errors.belt">
+          <p x-text="errors.belt" class="error"></p>
+        </template>
       </div>
 
       <!-- short bio -->
@@ -86,6 +106,10 @@
           <span>Short Bio:</span>
           <textarea maxlength="100" x-model="bio"></textarea>
         </label>
+
+        <template x-if="errors.bio">
+          <p x-text="errors.bio" class="error"></p>
+        </template>
       </div>
 
       <!-- newsletter signup -->
