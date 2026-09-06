@@ -1,6 +1,12 @@
 # Alpine.js Playground
 
-## Branches
+A small playground I built while learning Alpine.js.
 
-- `counter`: Counter example used to learn the basics of Alpine
-- `form`: Added little validation to a form while still learning more Alpine directives
+It contains examples of Alpine's core directives, state management,
+event handling, transitions, and component patterns.
+
+## Components
+
+I've started building reusable Alpine.js components separately.
+
+→ [View the Alpine Components](https://github.com/trevorcj/alpine-components)
